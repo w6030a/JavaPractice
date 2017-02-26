@@ -29,8 +29,8 @@ public class InterestedTimeProblem {
 		
 		int numOfInterestingTime = 0;
 		for(int i = startHour; i <= endHour; i++) {
-			for(int j = startMin; (j <= endMin && startHour == endHour) || (j <= 59 && startHour != endHour); j++) {
-				for(int k = startSec; (k <= endSec && startMin == endMin) || (k <= 59 && startMin != endMin); k++) {
+			for(int j = startMin; (j <= endMin && i == endHour) || (j <= 59 && i != endHour); j++) {
+				for(int k = startSec; (k <= endSec && j == endMin) || (k <= 59 && j != endMin); k++) {
 					HashSet<Character> bucket = new HashSet<Character>();
 					
 					if(i < 10 || j < 10 || k < 10)
@@ -40,7 +40,7 @@ public class InterestedTimeProblem {
 					bucket.addAll(stringToCharList(allTheDigits));
 					if(bucket.size() <= 2) {
 						numOfInterestingTime++;
-						System.out.println(bucket.toString());
+						//System.out.println(bucket.toString());
 						System.out.println(String.format("%d, %d, %d", i, j, k));
 					}
 				}

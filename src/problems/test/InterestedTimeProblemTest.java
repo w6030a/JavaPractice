@@ -26,7 +26,7 @@ public class InterestedTimeProblemTest {
 	public void testTimeWithNormalInput() {
 		String startTime = "11:11:11";
 		String endTime = "11:12:12";
-		assertEquals(21, InterestedTimeProblem.solution(startTime, endTime));
+		assertEquals(19, InterestedTimeProblem.solution(startTime, endTime));
 	}
 	
 	@Test
